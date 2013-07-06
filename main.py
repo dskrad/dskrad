@@ -14,12 +14,12 @@ class MainHandler(webapp.RequestHandler):
     path = os.path.join (os.path.dirname (__file__), q)
     self.response.headers ['Content-Type'] = 'text/html'
     self.response.out.write (template.render (path, {}))
-    
-class CacheManifest(webapp.RequestHandler):    
+
+class CacheManifest(webapp.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/cache-manifest'
     self.response.out.write(template.render (path, {}))
-        
+
 
 def main ():
   application = webapp.WSGIApplication ([('/(.*html)?', MainHandler),
