@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html manifest="index.manifest">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>
+			HH Board Prep
+		</title>
+    <link rel="apple-touch-startup-image" href="startup.png"/>
+		<link rel="stylesheet" href="jquery.mobile-1.3.0.min.css" />
+		<link rel="stylesheet" href="my.css" />
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js">
+		</script>
+		<script src="jquery.mobile-1.3.0.min.js">
+		</script>
+		<script src="my.js">
+		</script>
+		<!-- User-generated css -->
+		<style>
+		</style>
+		<!-- User-generated js -->
+		<script>
+		try {
+		$(document).ready(function() {
+			var days = (new Date(2013,5,9,10) - new Date())/(1000*60*60*24);
+      var weeks = Math.floor(days / 7);
+      var wkdys = days % 7;
+      var string = days.toFixed(1) + " days ("+weeks+" weeks, "+wkdys.toFixed(1)+" days)"+ "<br />until Louisville :)";
+      $('#cntdwn').html(string);
+		});
+		} catch (error) {
+		console.error("Your javascript has an error: " + error);
+		}
+		</script>
+	</head>
+	<body>
+	
+		<!-- Home -->
+		<div data-role="page" id="page1" data-theme="a">
+			<div data-theme="a" data-role="header">
+				<h3>
+					Board Prep Info
+				</h3>
+			</div>
+			<div data-role="content">
+				<a data-role="button" data-transition="slide" href="#page2">
+					Grand Rounds
+				</a>
+				<a data-role="button" data-transition="slide" href="#page3">
+					Misc Reviews
+				</a>
+			</div>
+			<div id="cntdwn" data-role="content" style="text-align: center;">
+			</div>
+			<div id="quote-content" data-role="content">
+			</div>
+			<div data-theme="a" data-role="footer" data-position="fixed">
+				<h5>
+					dsk 2013
+				</h5>
+			</div>
+		</div>
+		
+		<!-- page2 -->
+		<div data-role="page" id="page2" data-theme="a">
+			<div data-theme="a" data-role="header" data-position="fixed">
+				<h3>
+					Grand Rounds Schedule
+				</h3>
+				<a data-role="button" data-direction="reverse" data-transition="slide"
+    href="#page1" data-icon="back" data-iconpos="left" class="ui-btn-left">
+          Back
+        </a>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="false">
+					<li>Jan 30 BAYSTATE 
+						<p>Dr. Wu - MSK</p>
+					</li>
+					<li>Feb 27 BAYSTATE 	
+						<p>Dr. Shiels – Pedi</p>
+					</li>
+					<li>Mar 1 HH 	
+						<p>Leslie Scoutt in AM (Yale) Ultrasound</p>
+					</li>
+					<li>Mar 11 UCONN	
+						<p>Nancy Budorick, MD (Stony Brook) ObGyn/US</p>
+					</li>
+					<li>Mar 13 HH	
+						<p>Greg Wrubel Noon (Brigham) Neuro</p>
+					</li>
+					<li>Mar 19 HH	
+						<p>Nicole Hindman (NYU) body</p>
+					</li>
+					<li>Mar 25 UCONN	
+						<p>Deborah Reede, MD (SUNY Downstate) Head and Neck</p>
+					</li>
+					<li>Mar 28 HH	
+						<p>Stacy Smith (Brigham) MSK</p>
+					</li>
+					<li>Apr 3 BAYSTATE	
+						<p>Dr. Alice Boyd Smith - Neuro</p>
+					</li>
+					<li>Apr 25 HH	
+						<p>Peeyush Bhargava (Houston) Nucs</p>
+					</li>
+					<li>May 1 BAYSTATE
+						<p>Dr. Anne Covey – IR</p>
+					</li>
+					<li>May 10 UCONN	
+						<p>Todd Schlachter (Hopkins) IR</p>
+					</li>
+					<li>May 13 UCONN	
+						<p>Gary Israel (Yale) GI/GU</p>
+					</li>
+					<li>May 21 HH	
+						<p>Tim Brown in AM (CCMC) Peds</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- page3 -->
+		<div data-role="page" id="page3" data-theme="a">
+			<div data-theme="a" data-role="header">
+				<h3>
+					Misc Reviews
+				</h3>
+				<a data-role="button" data-direction="reverse" data-transition="slide"
+    href="#page1" data-icon="back" data-iconpos="left" class="ui-btn-left">
+          Back
+        </a>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview">
+					<li>Mar 27 noon
+						<p>Alisa Kanfi</p>
+					</li>
+          <li>Apr 27 Sat 10am 
+          	<p>Josh Kallen</p>
+          </li>
+          <li>Apr 29 after work
+          	<p>Tim Herbst</p>
+          </li>
+          <li>May 14 after work
+            <p>Dr. Philips</p>
+          </li>
+          <li>May 21 after work (New Haven)
+            <p>Zenon Protopopas</p>
+          </li>
+          <li>May 29 morning
+            <p>Foxman's Friend</p>
+          </li>
+					<li>?? 
+						<p>Aleyna</p>
+          </li>
+				</ul>
+			</div>
+		</div>
+		
+	</body>
+</html>
