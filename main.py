@@ -6,8 +6,8 @@ from math import e
 from sys import argv
 from bottle import run, route, static_file, template
 
-def dcy(isotope, activity):
-  hours = xrange(13)
+def dcy(isotope, activity, count=12):
+  hours = xrange(count+1)
   activities = []
   ret_str = []
   for hour in hours:
@@ -25,6 +25,19 @@ def main(isotope, activity):
         header="Tc99m decay")
   elif isotope == "F18":
     return template("decay", content=dcy(F18, float(activity)),
+        header="F18 decay")
+  else:
+    return template("decay",
+        content=["Format url as", "/Tc99m/10.0 or", "/F18/12.2"],
+        header="Error")
+
+@route("/<isotope>/<activity>/<count>")
+def main(isotope, activity, count):
+  if isotope == "Tc99m":
+    return template("decay", content=dcy(Tc99m, float(activity), int(count)),
+        header="Tc99m decay")
+  elif isotope == "F18":
+    return template("decay", content=dcy(F18, float(activity), int(count)),
         header="F18 decay")
   else:
     return template("decay",
